@@ -1,6 +1,10 @@
 #!/usr/bin/python3
+"""Unittest for BaseModel class"""
 
 import unittest
+import sys
+from datetime import datetime
+from models import base_model
 from models.base_model import BaseModel
 
 
@@ -14,4 +18,18 @@ class TestBaseModel(unittest.TestCase):
         self.assertTrue(hasattr(bm1, "id"))
         self.assertNotEqual(bm1.id, bm2.id)
         self.assertIsInstance(bm1.id, str)
+
+
+    def test_to_dict(self):
+        """ dictionary represntation test"""
+
+        bm1_dict = self.bm1.to_dict()
+        self.assertTrue(self.bm1.__dict__, type(dict))
+        self.assertEqual(dict, type(bm1_dict))
+        self.assertEqual(self.bm1.id, bm1_dict["id"])
+        self.assertEqual("BaseModel", bm1_dict["__class__"])
+        self.assertEqual(self.bm1.created_at.isoformat(),
+                         bm1_dict["created_at"])
+        self.assertEqual(self.bm1.updated_at.isoformat(),
+                         bm1_dict["updated_at"])
 
