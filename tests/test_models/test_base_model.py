@@ -2,6 +2,7 @@
 """Unittest for BaseModel class"""
 
 import unittest
+import os
 import sys
 from datetime import datetime
 from models import base_model
@@ -23,13 +24,14 @@ class TestBaseModel(unittest.TestCase):
     def test_to_dict(self):
         """ dictionary represntation test"""
 
-        bm1_dict = self.bm1.to_dict()
-        self.assertTrue(self.bm1.__dict__, type(dict))
+        bm1 = BaseModel()
+        bm1_dict = bm1.to_dict()
+        self.assertTrue(bm1.__dict__, type(dict))
         self.assertEqual(dict, type(bm1_dict))
-        self.assertEqual(self.bm1.id, bm1_dict["id"])
+        self.assertEqual(bm1.id, bm1_dict["id"])
         self.assertEqual("BaseModel", bm1_dict["__class__"])
-        self.assertEqual(self.bm1.created_at.isoformat(),
+        self.assertEqual(bm1.created_at.isoformat(),
                          bm1_dict["created_at"])
-        self.assertEqual(self.bm1.updated_at.isoformat(),
+        self.assertEqual(bm1.updated_at.isoformat(),
                          bm1_dict["updated_at"])
 
