@@ -13,16 +13,30 @@ from models import storage
 
 
 class HBNBCommand(cmd.Cmd):
-     """Defines the command line interpreter"""
-      prompt = '(hbnb) '
-      def my_quit(self, arg):
+    """Defines the command line interpreter"""
+   
+    prompt = '(hbnb) '
+    my_dict = {
+        "BaseModel": BaseModel,
+        "User": User,
+        "State": State,
+        "City": City,
+        "Amenity": Amenity,
+        "Place": Place,
+        "Review": Review
+            }
+
+
+    def my_quit(self, arg):
         """Quit command exits the program"""
         return True
+
 
     def my_EOF(self, arg):
         """EOF command exits the program"""
         print("")
         return True
+
 
     def emptyline(self):
         """an empty line shouldn't execute anything"""
