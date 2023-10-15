@@ -3,13 +3,14 @@
 import uuid
 from datetime import datetime
 
+
 class BaseModel:
     def __init__(self, *args, **kwargs):
         if kwargs:
             for key, value in kwargs.items():
                 if key == 'created_at' or key == 'updated_at':
                     setattr(self, key, datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f'))
-                else:
+                elif key != '__class__':
                     setattr(self, key, value)
         else:
             self.id = str(uuid.uuid4())
@@ -33,5 +34,9 @@ if __name__ == "__main__":
     obj = BaseModel()
     obj.save()
     print(obj)
+
     obj_dict = obj.to_dict()
     print(obj_dict)
+
+    new_obj = BaseModel(**obj_dict)
+    print(new_obj)
