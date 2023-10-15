@@ -5,8 +5,6 @@ to a JSON file and deserializes JSON file to instances.
 """
 
 import json
-
-<<<<<<< HEAD
 from models.base_model import BaseModel
 from models.base_model import BaseModel
 from models.user import User
@@ -15,8 +13,11 @@ from models.city import City
 from models.place import Place
 from models.amenity import Amenity
 from models.review import Review
-=======
+
+<<<<<<< HEAD
+ =======
 >>>>>>> 7d4dc8f5f43dc65225c4ca9c0e37d931e3e17ce0
+
 
 class FileStorage:
     """
