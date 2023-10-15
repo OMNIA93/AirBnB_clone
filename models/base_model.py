@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" module for BaseModel class """
 
 import cmd
 from datetime import datetime
