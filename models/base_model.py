@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-""" module for BaseModel class """
+"""Define base_model class"""
 
 import uuid
 from datetime import datetime
-import sys
 from models import storage
-sys.path.append("/path/to/models")
+import sys
 
 
 class BaseModel():
