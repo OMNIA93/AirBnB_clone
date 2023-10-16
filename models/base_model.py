@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """ module for BaseModel class """
 
-import cmd
+import uuid
 from datetime import datetime
 from models import storage
+import cmd
 import json
 import os
 import sys
-import uuid
 
 
 class BaseModel():
