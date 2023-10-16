@@ -5,6 +5,7 @@ import uuid
 from datetime import datetime
 import sys
 from models.engine import file_storage
+sys.path.append("/path/to/models")
 
 
 
