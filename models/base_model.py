@@ -4,11 +4,9 @@
 import uuid
 from datetime import datetime
 from models.engine import storage
-from models.base_model import BaseModel
 
 class BaseModel:
     """Defines all common attributes/methods for other classes"""
-   bm = BaseModel() 
 
     def __init__(self, *args, **kwargs):
         """Initialize a new instance of BaseModel"""
@@ -46,3 +44,12 @@ class BaseModel:
         result["created_at"] = self.created_at.isoformat()
         result["updated_at"] = self.updated_at.isoformat()
         return result
+
+bm = BaseModel()
+bm.updated_at = datetime.utcnow()
+d_json = bm.to_dict()
+print(type(d_json))
+print(type(d_json['id']))
+print(type(d_json['created_at']))
+print(type(d_json['__class__']))
+print(d_json['__class__'])
