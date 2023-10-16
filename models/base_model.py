@@ -12,21 +12,29 @@ class BaseModel():
     defines all common attributes/methods for other classes
     """
 
-    def __init__(self, *args, **kwargs):
-        """Initialize a new instance of BaseModel"""
-        if kwargs:
-            for key, value in kwargs.items():
-                if key == "created_at" or key == "updated_at":
-                    value = datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f')
-                if key != "__class__":
-                    setattr(self, key, value)
-        else:
-            self.id = str(uuid.uuid4())
-            self.created_at = datetime.now()
-            self.updated_at = self.created_at
-            storage.new(self)
+    def __init__(self, *args, **kwargs) -> None:
+        """init new or old object"""
+        if not kwargs:
+            self.id: str = str(uuid.uuid4())
+            self.created_at: datetime = datetime.datetime.now()
+            self.updated_at: datetime = datetime.datetime.now()
+            models.storage.new(self)
+            return
 
-    def __str__(self):
+        self._create_instance_from_dict(*args, **kwargs)
+
+    def _create_instance_from_dict(self, *_args, **kwargs) -> None:
+        """create new instance from dictionary input"""
+        for k, value in kwargs.items():
+            if k in ["updated_at", "created_at"]:
+                time_format: str = "%Y-%m-%dT%H:%M:%S.%f"
+                time: datetime = datetime.datetime.strptime(value, time_format)
+                setattr(self, k, time)
+                continue
+            if k != "__class__":
+                setattr(self, k, value)
+
+def __str__(self):
         """Return a string representation of the instance"""
         return "[{}] ({}) {}".format(
             self.__class__.__name__, self.id, self.__dict__)
