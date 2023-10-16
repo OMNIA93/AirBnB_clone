@@ -6,6 +6,7 @@ the command interpreter.
 
 import cmd
 
+
 class HBNBCommand(cmd.Cmd):
     """
     HBNBCommand class that implements the command interpreter.
@@ -32,6 +33,6 @@ class HBNBCommand(cmd.Cmd):
         """
         pass
 
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
-
