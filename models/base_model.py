@@ -4,10 +4,7 @@
 import uuid
 from datetime import datetime
 from models import storage
-import cmd
-import json
-import os
-import sys
+
 
 
 class BaseModel():
