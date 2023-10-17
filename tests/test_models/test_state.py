@@ -10,7 +10,8 @@ class TestState(unittest.TestCase):
 
     def test_instantiation(self):
         """check for instance """
-        self.assertIsInstance(State, State())
+        state1 = State()
+        self.assertIsInstance(state1, State)
 
 
     def test_attributes(self):
