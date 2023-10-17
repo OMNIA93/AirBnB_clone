@@ -2,7 +2,9 @@
 """Unittests for user class"""
 
 import unittest
+from models import user
 from models.user import User
+from models.base_model import BaseModel
 
 
 class TestUser(unittest.TestCase):
@@ -10,7 +12,8 @@ class TestUser(unittest.TestCase):
 
     def test_instantiation(self):
         """check for instance """
-        self.assertIsInstance(User, User())
+        user1 = User()
+        self.assertIsInstance(user1, User)
 
 
     def test_attributes(self):
