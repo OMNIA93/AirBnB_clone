@@ -16,14 +16,8 @@ class TestState(unittest.TestCase):
 
 
     def test_attributes(self):
-        self.assertTrue(hasattr(State, "email"))
-        self.assertIsInstance(State.email, str)
-        self.assertTrue(hasattr(State, "password"))
-        self.assertIsInstance(State.password, str)
-        self.assertTrue(hasattr(State, "first_name"))
-        self.assertIsInstance(State.first_name, str)
-        self.assertTrue(hasattr(State, "last_name"))
-        self.assertIsInstance(State.last_name, str)
+        self.assertTrue(hasattr(State, "name"))
+        self.assertIsInstance(State.name, str)
 
 
     def test_module_doc(self):
