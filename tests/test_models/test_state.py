@@ -3,6 +3,7 @@
 
 import unittest
 from models.state import State
+from models import state
 
 
 class TestState(unittest.TestCase):
