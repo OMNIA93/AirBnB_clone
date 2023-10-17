@@ -3,6 +3,7 @@
 
 import unittest
 from models.amenity import Amenity
+from models import amenity
 
 
 class TestAmenity(unittest.TestCase):
@@ -10,7 +11,8 @@ class TestAmenity(unittest.TestCase):
 
     def test_instantiation(self):
         """check for instance """
-        self.assertIsInstance(Amenity, Amenity())
+        amen1 = Amenity()
+        self.assertIsInstance(amen1, Amenity)
         self.assertTrue(hasattr(Amenity, "name"))
         self.assertIsInstance(Amenity.name, str)
 
