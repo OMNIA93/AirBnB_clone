@@ -29,6 +29,16 @@ class TestPlace(unittest.TestCase):
         self.assertIsInstance(Place.number_rooms, int)
         self.assertTrue(hasattr(Place, "number_bathrooms"))
         self.assertIsInstance(Place.number_bathrooms, int)
+        self.assertTrue(hasattr(Place, "max_guest"))
+        self.assertIsInstance(Place.max_guest, int)
+        self.assertTrue(hasattr(Place, "number_bathrooms"))
+        self.assertIsInstance(Place.number_bathrooms, int)
+        self.assertTrue(hasattr(Place, "number_bathrooms"))
+        self.assertIsInstance(Place.number_bathrooms, int)
+        self.assertTrue(hasattr(Place, "number_bathrooms"))
+        self.assertIsInstance(Place.number_bathrooms, int)
+        self.assertTrue(hasattr(Place, "number_bathrooms"))
+        self.assertIsInstance(Place.number_bathrooms, int)
 
 
     def test_module_doc(self):
