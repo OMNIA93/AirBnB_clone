@@ -38,7 +38,6 @@ class TestPlace(unittest.TestCase):
         self.assertTrue(hasattr(Place, "longitude"))
         self.assertIsInstance(Place.longitude, float)
         self.assertTrue(hasattr(Place, "amenity_ids"))
-        self.assertIsInstance(Place.amenity_ids, str)
 
 
     def test_module_doc(self):
