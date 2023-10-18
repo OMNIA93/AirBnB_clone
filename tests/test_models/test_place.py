@@ -27,6 +27,8 @@ class TestPlace(unittest.TestCase):
         self.assertIsInstance(Place.description, str)
         self.assertTrue(hasattr(Place, "number_rooms"))
         self.assertIsInstance(Place.number_rooms, int)
+        self.assertTrue(hasattr(Place, "number_bathrooms"))
+        self.assertIsInstance(Place.number_bathrooms, int)
 
 
     def test_module_doc(self):
