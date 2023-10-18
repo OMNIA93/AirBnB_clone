@@ -21,8 +21,8 @@ class TestPlace(unittest.TestCase):
         self.assertIsInstance(Place.city_id, str)
         self.assertTrue(hasattr(Place, "user_id"))
         self.assertIsInstance(Place.user_id, str)
-        self.assertTrue(hasattr(Place, "first_name"))
-        self.assertIsInstance(Place.first_name, str)
+        self.assertTrue(hasattr(Place, "name"))
+        self.assertIsInstance(Place.name, str)
         self.assertTrue(hasattr(Place, "last_name"))
         self.assertIsInstance(Place.last_name, str)
 
