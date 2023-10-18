@@ -17,6 +17,8 @@ class TestReview(unittest.TestCase):
         self.assertIsInstance(Review.place_id, str)
         self.assertTrue(hasattr(Review, "user_id"))
         self.assertIsInstance(Review.user_id, str)
+        self.assertTrue(hasattr(Review, "text"))
+        self.assertIsInstance(Review.text, str)
 
 
     def test_module_doc(self):
