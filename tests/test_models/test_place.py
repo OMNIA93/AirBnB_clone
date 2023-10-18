@@ -23,8 +23,8 @@ class TestPlace(unittest.TestCase):
         self.assertIsInstance(Place.user_id, str)
         self.assertTrue(hasattr(Place, "name"))
         self.assertIsInstance(Place.name, str)
-        self.assertTrue(hasattr(Place, "last_name"))
-        self.assertIsInstance(Place.last_name, str)
+        self.assertTrue(hasattr(Place, "description"))
+        self.assertIsInstance(Place.description, str)
 
 
     def test_module_doc(self):
