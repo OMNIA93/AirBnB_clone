@@ -13,8 +13,10 @@ class TestReview(unittest.TestCase):
         """check for instance """
         rev1 = Review()
         self.assertIsInstance(rev1, Review)
-        self.assertTrue(hasattr(Review, "name"))
-        self.assertIsInstance(Review.name, str)
+        self.assertTrue(hasattr(Review, "place_id"))
+        self.assertIsInstance(Review.place_id, str)
+        self.assertTrue(hasattr(Review, "user_id"))
+        self.assertIsInstance(Review.user_id, str)
 
 
     def test_module_doc(self):
