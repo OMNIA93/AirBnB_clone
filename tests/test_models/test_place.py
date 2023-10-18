@@ -35,10 +35,10 @@ class TestPlace(unittest.TestCase):
         self.assertIsInstance(Place.price_by_night, int)
         self.assertTrue(hasattr(Place, "latitude"))
         self.assertIsInstance(Place.latitude, float)
-        self.assertTrue(hasattr(Place, "number_bathrooms"))
-        self.assertIsInstance(Place.number_bathrooms, int)
-        self.assertTrue(hasattr(Place, "number_bathrooms"))
-        self.assertIsInstance(Place.number_bathrooms, int)
+        self.assertTrue(hasattr(Place, "longitude"))
+        self.assertIsInstance(Place.longitude, float)
+        self.assertTrue(hasattr(Place, "amenity_ids"))
+        self.assertIsInstance(Place.amenity_ids, str)
 
 
     def test_module_doc(self):
